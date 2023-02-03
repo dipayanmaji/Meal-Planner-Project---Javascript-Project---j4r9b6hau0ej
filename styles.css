@@ -1,3 +1,4 @@
+/* User Work */
 #page{
     box-sizing: border-box;
     width: 100%;
@@ -7,7 +8,7 @@
 }
 #logo{
     box-sizing: border-box;
-    height: 60px;
+    height: 80px;
     width: 100%;
     background-color: rgb(236, 47, 47);
     display: flex;
@@ -16,25 +17,26 @@
     padding: 0px 0px 0px 100px;
 }
 #image-logo{
-    width: 45px;
+    width: 65px;
 }
 #image-mealPlanner{
-    width: 300px;
+    width: 400px;
 }
 #user-work{
     box-sizing: border-box;
     width: 100%;
     margin: 15px 0px 0px 0px;
-    height: 895px;
+    padding: 30px 100px 30px 100px;
+    height: 875px;
     background-color: white;
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr 1.3fr 1fr;
+    grid-gap: 50px;
 }
 #user-form{
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     justify-items: center;
-    padding: 30px 0px 0px 0px;
 }
 
 #inputType{
@@ -49,6 +51,7 @@
     grid-gap: 100px;
     align-items: center;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -81,6 +84,68 @@ input::-webkit-inner-spin-button {
 #generate-meals-btn{
     border-radius: 15px;
     width: 200px;
+    height: 40px;
     color: white;
     background-color: rgb(236, 47, 47);
+}
+
+@media (max-width:950px) {
+    #logo{
+        padding: 0px;
+        justify-content: center;
+    }
+    #user-work{
+        padding: 6px 20px 6px 20px;
+    }
+    #inputType{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 5px;
+    }
+    #selectType{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 5px;
+        margin: 5px;
+    }
+}
+@media(max-width: 500px){
+    #image-logo{
+        display: none;
+    }
+}
+@media(max-width: 410px){
+    #user-work{
+        padding: 5px 5px 5px 5px;
+    }
+    #image-logo{
+        display: block;
+    }
+    #image-mealPlanner{
+        display: none;
+    }
+}
+@media(max-width:250px) {
+    #page{
+        display: inline;
+    }
+}
+
+/* Meals */
+#meals{
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    text-align: justify;
+    background-color: azure;
+}
+
+
+
+/* Recipe */
+#recipe{
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    padding: 20px 3px 20px 30px;
 }
