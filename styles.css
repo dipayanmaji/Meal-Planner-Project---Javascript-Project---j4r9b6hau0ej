@@ -2,7 +2,7 @@
 #page{
     box-sizing: border-box;
     width: 100%;
-    height: 1000px;
+    height: 1400px;
     background-color: rgb(228, 228, 228);
     padding: 15px;
 }
@@ -27,7 +27,7 @@
     width: 100%;
     margin: 15px 0px 0px 0px;
     padding: 30px 100px 30px 100px;
-    height: 875px;
+    height: 1275px;
     background-color: white;
     display: grid;
     grid-template-rows: 1fr 1.3fr 1fr;
