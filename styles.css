@@ -63,20 +63,57 @@ input::-webkit-inner-spin-button {
     border-radius: 15px;
     width: 200px;
 }
+#heightRed{
+    background-color: rgb(228, 228, 228);
+    border-radius: 15px;
+    width: 200px;
+    box-shadow: 0px 0px 5px 1px red;
+}
+#heightRed::placeholder{
+    color: red;
+}
+
 #weight{
     background-color: rgb(228, 228, 228);
     border-radius: 15px;
     width: 200px;
 }
+#weightRed{
+    background-color: rgb(228, 228, 228);
+    border-radius: 15px;
+    width: 200px;
+    box-shadow: 0px 0px 5px 1px red;
+}
+#weightRed::placeholder{
+    color: red;
+}
+
 #age{
     background-color: rgb(228, 228, 228);
     border-radius: 15px;
     width: 200px;
 }
+#ageRed{
+    background-color: rgb(228, 228, 228);
+    border-radius: 15px;
+    width: 200px;
+    box-shadow: 0px 0px 5px 1px red;
+}
+#ageRed::placeholder{
+    color: red;
+}
+
 #gender{
     background-color: rgb(228, 228, 228);
     border-radius: 15px;
     width: 200px;
+}
+#genderRed{
+    background-color: rgb(228, 228, 228);
+    border-radius: 15px;
+    width: 200px;
+    color: red;
+    box-shadow: 0px 0px 5px 1px red;
 }
 
 #activity-level{
@@ -85,6 +122,15 @@ input::-webkit-inner-spin-button {
     width: 200px;
     text-overflow: ellipsis;
 }
+#activity-levelRed{
+    background-color: rgb(228, 228, 228);
+    border-radius: 15px;
+    width: 200px;
+    text-overflow: ellipsis;
+    color: red;
+    box-shadow: 0px 0px 5px 1px red;
+}
+
 #generate-meals-btn{
     border-radius: 15px;
     width: 200px;
@@ -98,7 +144,7 @@ input::-webkit-inner-spin-button {
     font-size: 15px;
 }
 
-@media (max-width:950px) {
+/* @media (max-width:950px) {
     #logo{
         padding: 0px;
         justify-content: center;
@@ -138,7 +184,7 @@ input::-webkit-inner-spin-button {
     #page{
         display: inline;
     }
-}
+} */
 
 /* Meals */
 #meals{
@@ -217,7 +263,7 @@ input::-webkit-inner-spin-button {
 }
 
 table{
-    border: 2px solid;
+    /* border: 2px solid; */
     line-height: 40px;
     letter-spacing: 1px;
 }
@@ -229,10 +275,16 @@ tbody{
     font-size: large;
     font-weight: 500;
     text-transform: lowercase;
+
 }
 td, th{
     width:100%;
 }
 .ingredients{
     text-transform: capitalize;
+    /* width: 50%; */
+}
+.equipment{
+    /* width: 50%; */
+
 }

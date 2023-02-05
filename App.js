@@ -9,28 +9,35 @@ const mealsContener = document.getElementById('meals');
 const recipeContener = document.getElementById("recipe");
 const recipeList = document.getElementById("recipeList");
 
-let mealRecipe1;
-let mealRecipe2;
-let mealRecipe3;
+let mealRecipe = {};
 
 generateMealsButton.addEventListener('click', (e)=>{
     e.preventDefault();
 
     mealsContener.innerHTML = "";
+    recipeList.innerHTML = "";
     if(!recipeContener.classList.contains("display")){
         recipeContener.classList.add("display");
     }
-
-    mealRecipe1 = "";
-    mealRecipe2 = "";
-    mealRecipe3 = "";
 
     const height = heightInput.value;
     const weight = weightInput.value;
     const age = ageInput.value;
     const gender = genderInput.value;
     const activityLevel = activityLevelInput.value;
+    if(!height) heightInput.id = "heightRed";
+    if(!weight) weightInput.id = "weightRed";
+    if(!age) ageInput.id = "ageRed";
+    if(!gender) genderInput.id = "genderRed";
+    if(!activityLevel) activityLevelInput.id = "activity-levelRed";
     if(height && weight && age && gender && activityLevel){
+
+        heightInput.value = "";
+        weightInput.value = "";
+        ageInput.value = "";
+        genderInput.value = "";
+        activityLevelInput.value = "";
+
         let bmr;
         if(gender == "female"){
             bmr = 655.1 + (9.563 * Number(weight)) + (1.850 * Number(height)) - (4.676 * Number(age));
@@ -43,7 +50,7 @@ generateMealsButton.addEventListener('click', (e)=>{
         
         try{
             async function runApis(){
-                const allMeals = await fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=d29b088f527d4769a08a25b565931f0f&timeFrame=day&targetCalories=${bmr}`);
+                const allMeals = await fetch(`https://api.spoonacular.com/mealplanner/generate?apiKey=530c1e9ff9bd449d99fa0341c3000355&timeFrame=day&targetCalories=${bmr}`);
                 const mealsObj = await allMeals.json();
                 let mealCount = 0;
                 mealsObj.meals.forEach((eachMeal)=>{
@@ -80,9 +87,10 @@ generateMealsButton.addEventListener('click', (e)=>{
                     mealDiv.append(mealTypeHeading, mealDesDiv);
                     mealsContener.append(mealDiv);
                 
-                    fetch(`https://api.spoonacular.com/recipes/${eachMeal.id}/information?apiKey=d29b088f527d4769a08a25b565931f0f`)
+                    fetch(`https://api.spoonacular.com/recipes/${eachMeal.id}/information?apiKey=530c1e9ff9bd449d99fa0341c3000355`)
                     .then((rel)=> rel.json())
                     .then((recipeObj)=>{
+                        mealRecipe[eachMeal.id]= recipeObj;
                         img.src = recipeObj.image;
                         mealCalories.textContent = `Calories - ${getCaloriesAmount(recipeObj.summary)}`;
                     })
@@ -120,31 +128,39 @@ function getCaloriesAmount(str){
 }
 
 function getRecipe(e){
-    console.log(e.target.id);
-
     if(recipeContener.classList.contains("display")){
         recipeContener.classList.remove("display");
     }
     recipeList.innerHTML = "";
+    console.log(mealRecipe)
+    let recipeDetails = mealRecipe[e.target.id];
+    recipeDetails.extendedIngredients.forEach((element)=>{
+        const row = document.createElement("tr");
+        const ingredients = document.createElement("td");
+        ingredients.classList.add("ingredients");
+        const equipment = document.createElement("td");
+        equipment.classList.add("equipment");
 
-    fetch(`https://api.spoonacular.com/recipes/${e.target.id}/information?apiKey=d29b088f527d4769a08a25b565931f0f`)
-    .then((rel)=> rel.json())
-    .then((recipeDetails)=>{
-        console.log(recipeDetails);
-        recipeDetails.extendedIngredients.forEach((element)=>{
-            const row = document.createElement("tr");
-            const ingredients = document.createElement("td");
-            ingredients.classList.add("ingredients");
-            const equipment = document.createElement("td");
+        ingredients.textContent = element.name;
+        equipment.textContent = `${element.measures.us.amount} ${element.measures.us.unitLong}`;
 
-            ingredients.textContent = element.name;
-            equipment.textContent = `${element.measures.us.amount} ${element.measures.us.unitLong}`;
-
-            row.append(ingredients, equipment);
-            recipeList.append(row);
-        })
-    })
-    .catch((error)=>{
-        console.log("Somthing error occur in recipe API");
+        row.append(ingredients, equipment);
+        recipeList.append(row);
     })
 }
+
+heightInput.addEventListener("focus", ()=>{
+    heightInput.id = "height";
+})
+weightInput.addEventListener("focus", ()=>{
+    weightInput.id = "weight";
+})
+ageInput.addEventListener("focus", ()=>{
+    ageInput.id = "age";
+})
+genderInput.addEventListener("focus", ()=>{
+    genderInput.id = "gender";
+})
+activityLevelInput.addEventListener("focus", ()=>{
+    activityLevelInput.id = "activity-level";
+})
