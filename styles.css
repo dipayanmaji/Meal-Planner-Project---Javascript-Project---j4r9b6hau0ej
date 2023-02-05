@@ -1,7 +1,7 @@
 /* User Work */
 #page{
     box-sizing: border-box;
-    width: 100%;
+    width: 1349px;
     height: 1400px;
     background-color: rgb(228, 228, 228);
     padding: 15px;
@@ -250,19 +250,25 @@ input::-webkit-inner-spin-button {
 }
 
 /* Recipe */
+
+.recipe{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    padding: 20px;
+    overflow: auto;
+    box-shadow: 2px 2px 5px black;
+}
 .display{
     display: none;
 }
 
-#recipe{
-    background-color: rgb(228, 228, 228);
-    border-radius: 10px;
-    padding: 20px 150px 20px 150px;
-    overflow: auto;
-    box-shadow: 2px 2px 5px black;
+#recipe::-webkit-scrollbar {
+    display: none;
 }
-
 table{
+    width: 80%;
     /* border: 2px solid; */
     line-height: 40px;
     letter-spacing: 1px;
@@ -274,17 +280,13 @@ thead{
 tbody{
     font-size: large;
     font-weight: 500;
-    text-transform: lowercase;
-
 }
 td, th{
-    width:100%;
+    width:80%;
 }
 .ingredients{
     text-transform: capitalize;
-    /* width: 50%; */
 }
 .equipment{
-    /* width: 50%; */
-
+    text-transform: lowercase;
 }

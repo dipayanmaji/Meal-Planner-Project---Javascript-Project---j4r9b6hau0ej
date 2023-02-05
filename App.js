@@ -9,7 +9,7 @@ const mealsContener = document.getElementById('meals');
 const recipeContener = document.getElementById("recipe");
 const recipeList = document.getElementById("recipeList");
 
-let mealRecipe = {};
+let mealRecipe;
 
 generateMealsButton.addEventListener('click', (e)=>{
     e.preventDefault();
@@ -19,17 +19,20 @@ generateMealsButton.addEventListener('click', (e)=>{
     if(!recipeContener.classList.contains("display")){
         recipeContener.classList.add("display");
     }
+    mealRecipe = {};
 
     const height = heightInput.value;
     const weight = weightInput.value;
     const age = ageInput.value;
     const gender = genderInput.value;
     const activityLevel = activityLevelInput.value;
+    
     if(!height) heightInput.id = "heightRed";
     if(!weight) weightInput.id = "weightRed";
     if(!age) ageInput.id = "ageRed";
     if(!gender) genderInput.id = "genderRed";
     if(!activityLevel) activityLevelInput.id = "activity-levelRed";
+
     if(height && weight && age && gender && activityLevel){
 
         heightInput.value = "";
@@ -132,7 +135,6 @@ function getRecipe(e){
         recipeContener.classList.remove("display");
     }
     recipeList.innerHTML = "";
-    console.log(mealRecipe)
     let recipeDetails = mealRecipe[e.target.id];
     recipeDetails.extendedIngredients.forEach((element)=>{
         const row = document.createElement("tr");
