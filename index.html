@@ -20,9 +20,9 @@
             <!-- User Input Section -->
             <form id="user-form">
                 <section id="inputType">
-                    <input class="form-control" id="height" type="number" placeholder="Enter Height (in cm)" min="1" required>
-                    <input class="form-control" id="weight" type="number" placeholder="Enter Weight (in kg)" min="1" required>
-                    <input class="form-control" id="age" type="number" placeholder="Enter Age" min="1" required>
+                    <input class="form-control" id="height" type="number" placeholder="Enter Height (in cm)" min="1" value="165" required>
+                    <input class="form-control" id="weight" type="number" placeholder="Enter Weight (in kg)" min="1" value="55" required>
+                    <input class="form-control" id="age" type="number" placeholder="Enter Age" min="1" value="22" required>
                 </section>
                 <section id="selectType">
                     <select class="form-control" name="gender" id="gender" required>
@@ -46,8 +46,18 @@
                 
             </section>
             <!-- Recipe Section -->
-            <section id="recipe">
-                
+            <section id="recipe" class="display">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>INGREDIENTS</th>
+                            <th>EQUIPMENT</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recipeList">
+                        
+                    </tbody>
+                </table>                
             </section>
         </section>
     </section>

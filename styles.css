@@ -30,7 +30,7 @@
     height: 1275px;
     background-color: white;
     display: grid;
-    grid-template-rows: 1fr 1.3fr 1fr;
+    grid-template-rows: 1fr 1.5fr 1fr;
     grid-gap: 50px;
 }
 #user-form{
@@ -62,19 +62,23 @@ input::-webkit-inner-spin-button {
     background-color: rgb(228, 228, 228);
     border-radius: 15px;
     width: 200px;
-}#weight{
-    background-color: rgb(228, 228, 228);
-    border-radius: 15px;
-    width: 200px;
-}#age{
-    background-color: rgb(228, 228, 228);
-    border-radius: 15px;
-    width: 200px;
-}#gender{
+}
+#weight{
     background-color: rgb(228, 228, 228);
     border-radius: 15px;
     width: 200px;
 }
+#age{
+    background-color: rgb(228, 228, 228);
+    border-radius: 15px;
+    width: 200px;
+}
+#gender{
+    background-color: rgb(228, 228, 228);
+    border-radius: 15px;
+    width: 200px;
+}
+
 #activity-level{
     background-color: rgb(228, 228, 228);
     border-radius: 15px;
@@ -87,6 +91,11 @@ input::-webkit-inner-spin-button {
     height: 40px;
     color: white;
     background-color: rgb(236, 47, 47);
+    font-weight: 500;
+}
+#generate-meals-btn:active{
+    background-color: rgb(180, 36, 36);
+    font-size: 15px;
 }
 
 @media (max-width:950px) {
@@ -138,15 +147,92 @@ input::-webkit-inner-spin-button {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
     text-align: justify;
-    background-color: azure;
+    /* background-color: rgb(49, 228, 228); */
 }
 
-
+.meal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+.mealType{
+    color: rgb(236, 47, 47);
+    font-size: large;
+    font-weight: 500;
+}
+.mealDescription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 345px;
+    height: 434px;
+    padding-bottom: 20px;
+    background-color: rgb(236, 47, 47);
+    border-radius: 20px;
+    border: 3px solid rgb(236, 47, 47);
+}
+.mealImage{
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+.mealTitle{
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    font-weight: 500;
+}
+.mealCalories{
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+}
+.mealButton{
+    height: 30px;
+    width: 150px;
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    font-weight: 500;
+}
+.mealButton:active{
+    background-color: rgb(180, 36, 36);
+    font-size: 15px;
+}
 
 /* Recipe */
+.display{
+    display: none;
+}
+
 #recipe{
     background-color: rgb(228, 228, 228);
     border-radius: 10px;
-    padding: 20px 3px 20px 30px;
+    padding: 20px 150px 20px 150px;
     overflow: auto;
+    box-shadow: 2px 2px 5px black;
+}
+
+table{
+    border: 2px solid;
+    line-height: 40px;
+    letter-spacing: 1px;
+}
+thead{
+    font-size: larger;
+    color: rgb(236, 47, 47);
+}
+tbody{
+    font-size: large;
+    font-weight: 500;
+    text-transform: lowercase;
+}
+td, th{
+    width:100%;
+}
+.ingredients{
+    text-transform: capitalize;
 }
