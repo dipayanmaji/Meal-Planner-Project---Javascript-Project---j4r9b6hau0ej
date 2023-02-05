@@ -101,7 +101,6 @@ generateMealsButton.addEventListener('click', (e)=>{
                         console.log("Somthing error occur in recepie API");
                     })
                 })
-                
             }
             runApis();
         }

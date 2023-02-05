@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="./App.js" defer></script>
 </head>
-<body>
+<body id="body">
     <section id="page">
         <nav id="logo">
             <img id="image-logo" src="./spoons.png" alt="logo">
@@ -21,9 +21,9 @@
             <!-- User Input Section -->
             <form id="user-form">
                 <section id="inputType">
-                    <input class="form-control" id="height" type="number" placeholder="Enter Height (in cm)" value="165" min="1" required>
-                    <input class="form-control" id="weight" type="number" placeholder="Enter Weight (in kg)" value="55" min="1" required>
-                    <input class="form-control" id="age" type="number" placeholder="Enter Age" value="22" min="1" required>
+                    <input class="form-control" id="height" type="number" placeholder="Enter Height (in cm)" min="1" required>
+                    <input class="form-control" id="weight" type="number" placeholder="Enter Weight (in kg)" min="1" required>
+                    <input class="form-control" id="age" type="number" placeholder="Enter Age" min="1" required>
                 </section>
                 <section id="selectType">
                     <select class="form-control" name="gender" id="gender" required>
@@ -56,7 +56,7 @@
                         </tr>
                     </thead>
                     <tbody id="recipeList">
-                        <!-- <tr><td class="ingredients">bell pepper</td><td class="equipment">0.5 </td></tr><tr><td class="ingredients">butter</td><td class="equipment">1 Tbsp</td></tr><tr><td class="ingredients">black beans</td><td class="equipment">1 can</td></tr><tr><td class="ingredients">cheese</td><td class="equipment">1 cup</td></tr><tr><td class="ingredients">chili powder</td><td class="equipment">0.5 teaspoons</td></tr><tr><td class="ingredients">corn</td><td class="equipment">0.5 cups</td></tr><tr><td class="ingredients">cream cheese</td><td class="equipment">4 ounces</td></tr><tr><td class="ingredients">cumin</td><td class="equipment">0.5 teaspoons</td></tr><tr><td class="ingredients">garlic</td><td class="equipment">1 teaspoon</td></tr><tr><td class="ingredients">onions</td><td class="equipment">0.25 cups</td></tr><tr><td class="ingredients">salt</td><td class="equipment">1 teaspoon</td></tr><tr><td class="ingredients">chicken</td><td class="equipment">1 cup</td></tr><tr><td class="ingredients">tortillas</td><td class="equipment">4 </td></tr> -->
+
                     </tbody>
                 </table>
             </section>

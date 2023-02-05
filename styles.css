@@ -1,3 +1,7 @@
+#body{
+    background-color: rgb(228, 228, 228);
+}
+
 /* User Work */
 #page{
     box-sizing: border-box;
@@ -5,6 +9,7 @@
     height: 1400px;
     background-color: rgb(228, 228, 228);
     padding: 15px;
+    margin: auto;
 }
 #logo{
     box-sizing: border-box;
@@ -144,48 +149,6 @@ input::-webkit-inner-spin-button {
     font-size: 15px;
 }
 
-/* @media (max-width:950px) {
-    #logo{
-        padding: 0px;
-        justify-content: center;
-    }
-    #user-work{
-        padding: 6px 20px 6px 20px;
-    }
-    #inputType{
-        display: flex;
-        flex-direction: column;
-        grid-gap: 5px;
-    }
-    #selectType{
-        display: flex;
-        flex-direction: column;
-        grid-gap: 5px;
-        margin: 5px;
-    }
-}
-@media(max-width: 500px){
-    #image-logo{
-        display: none;
-    }
-}
-@media(max-width: 410px){
-    #user-work{
-        padding: 5px 5px 5px 5px;
-    }
-    #image-logo{
-        display: block;
-    }
-    #image-mealPlanner{
-        display: none;
-    }
-}
-@media(max-width:250px) {
-    #page{
-        display: inline;
-    }
-} */
-
 /* Meals */
 #meals{
     box-sizing: border-box;
@@ -250,7 +213,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* Recipe */
-
 .recipe{
     display: flex;
     justify-content: center;
@@ -259,6 +221,7 @@ input::-webkit-inner-spin-button {
     padding: 20px;
     overflow: auto;
     box-shadow: 2px 2px 5px black;
+    height: 318px;
 }
 .display{
     display: none;
@@ -289,4 +252,70 @@ td, th{
 }
 .equipment{
     text-transform: lowercase;
+}
+
+/* media screen */
+@media (max-width:800px) {
+    #page{
+        width: auto;
+        height: auto;
+    }
+    #user-work{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #user-form, #user-form section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-gap: 5px;
+    }
+    #meals{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media(max-width: 620px){
+    #logo{
+        justify-content: center;
+        padding: 0px;
+    }
+    #image-logo{
+        display: none;
+    }
+    table{
+        width: 100%;
+        letter-spacing: 0px;
+    }
+}
+@media(max-width: 520px){
+    #recipe{
+        width: 345px;
+    }
+    table{
+        line-height: 30px;
+    }
+    thead{
+        font-size: medium;
+        color: rgb(236, 47, 47);
+    }
+    tbody{
+        font-size: medium;
+    }
+}
+@media(max-width: 410px){
+    #image-mealPlanner{
+        display: none;
+    }
+    #image-logo{
+        display: block;
+    }
+}
+@media(max-width: 380px){
+    #page{
+        height: 380px;
+        width: 380px;
+    }
 }
