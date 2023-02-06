@@ -305,7 +305,7 @@ td, th{
         font-size: medium;
     }
 }
-@media(max-width: 410px){
+@media(max-width: 420px){
     #image-mealPlanner{
         display: none;
     }
@@ -313,9 +313,9 @@ td, th{
         display: block;
     }
 }
-@media(max-width: 380px){
+@media(max-width: 395px){
     #page{
-        height: 380px;
-        width: 380px;
+        height: 395px;
+        width: 395px;
     }
 }
