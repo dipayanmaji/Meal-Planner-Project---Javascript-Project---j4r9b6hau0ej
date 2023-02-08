@@ -8,6 +8,9 @@ const generateMealsButton = document.getElementById("generate-meals-btn");
 const mealsContener = document.getElementById('meals');
 const recipeContener = document.getElementById("recipe");
 const recipeList = document.getElementById("recipeList");
+const table = document.getElementById("table");
+const stepsBtn = document.getElementById("stepsBtn");
+const recipeSteps = document.getElementById("recipeSteps");
 
 let mealRecipe;
 
@@ -18,6 +21,10 @@ generateMealsButton.addEventListener('click', (e)=>{
     recipeList.innerHTML = "";
     if(!recipeContener.classList.contains("display")){
         recipeContener.classList.add("display");
+    }
+    recipeSteps.innerHTML = "";
+    if(!recipeSteps.classList.contains("display")){
+        recipeSteps.classList.add("display");
     }
     mealRecipe = {};
 
@@ -134,7 +141,14 @@ function getRecipe(e){
         recipeContener.classList.remove("display");
     }
     recipeList.innerHTML = "";
+    recipeSteps.innerHTML = "";
+    if(stepsBtn.textContent == "Ingredients"){
+        stepsBtn.textContent = "Steps";
+        table.classList.remove("display");
+        recipeSteps.classList.add("display");
+    }
     let recipeDetails = mealRecipe[e.target.id];
+    recipeSteps.innerHTML = recipeDetails.instructions;
     recipeDetails.extendedIngredients.forEach((element)=>{
         const row = document.createElement("tr");
         const ingredients = document.createElement("td");
@@ -149,6 +163,19 @@ function getRecipe(e){
         recipeList.append(row);
     })
 }
+
+stepsBtn.addEventListener("click",()=>{
+    if(stepsBtn.textContent == "Steps"){
+        stepsBtn.textContent = "Ingredients";
+        table.classList.add("display");
+        recipeSteps.classList.remove("display");
+    }
+    else{
+        stepsBtn.textContent = "Steps";
+        table.classList.remove("display");
+        recipeSteps.classList.add("display");
+    }
+})
 
 heightInput.addEventListener("focus", ()=>{
     heightInput.id = "height";
