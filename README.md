@@ -1,5 +1,9 @@
 <h1>Hosted Link</h1>
 <a href="https://meal-planner-project-dipayan.netlify.app/" target= "_blank"><strong>Meal Planner</strong></a>
+<h1></h1>
+
+![meal planner](https://user-images.githubusercontent.com/121128467/231084443-c218eecd-d9c3-4a1d-bd5b-a967f97ad792.png)
+<h1></h1>
 
 <h2>Features</h2>
 <ul>
