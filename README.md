@@ -5,7 +5,7 @@
 ![meal planner](https://user-images.githubusercontent.com/121128467/231084443-c218eecd-d9c3-4a1d-bd5b-a967f97ad792.png)
 <h1></h1>
 
-<h2>Features</h2>
+<h1>Features</h1>
 <ul>
   <li>Get daily meals by giving of some general information.</li>
   <li>API calls and fetched meals & recipe's steps.</li>
